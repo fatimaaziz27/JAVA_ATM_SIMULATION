@@ -1,8 +1,16 @@
 import java.util.*;
 import java.time.*;
 class main{
+
+    // main ---->
     public static void main(String[] args){
+        
+        // object of main class ----->
+
         bank b1 = new bank();
+        
+// input ----->
+
         while (true) {
             System.out.println("1.Signup\n2.Login");
             Scanner sc = new Scanner(System.in);
@@ -22,11 +30,19 @@ class main{
             if (o.equals("No")){
                 break;
             }
+
         }
     }
 }
+
 class bank{
+
+    // dictionary ----->
+
     HashMap<String,account> details = new HashMap<>();
+    
+    // method ----->
+
     void sign_up(){
 
         Scanner sc = new Scanner(System.in);
@@ -42,15 +58,17 @@ class bank{
         System.out.println("Set a 4-digit PIN:");
         int pin = sc.nextInt();
         
-        if (pin >= 0000 && pin <= 9999 ){
-            System.out.println("---------");
-        }
+        if (pin >= 0000 && pin <= 9999 ){}
+        else{System.out.print("Invalid Input");}
 
         System.out.println("ACCOUNT NUMBER: ");
         int acc_num = sc.nextInt();
 
+// Adding details in hashmap ----->
+
         details.put(name,new account(acc_num,name,pin,passkey,balance));
     }
+
     void login(){
 
         Scanner sc = new Scanner(System.in);
@@ -60,11 +78,16 @@ class bank{
         System.out.println("Enter PIN: ");
         String pin = sc.nextLine();
 
+// calling : if hashmap contain a item & get item ----->
+        
         account acc = details.get(name);
+        
         if (acc.details.containsKey(name) == true){
             System.out.println("Login Successful!");
         }
 
+// choice -------->
+        
         while (true){
             System.out.println("Banking Menu:\n" +
                     "1. Deposit Money\n" +
@@ -95,12 +118,19 @@ class bank{
                     break;
                 case 5:
                     sc.nextLine();
-                        System.out.println("Enter account name: ");
+                    System.out.println("Enter account name: ");
                     String acc_name = sc.nextLine();
+
+                    // getter ----->
+                    
                     account acc_n = details.get(acc_name);
+                    
+                    // checker ------>
+                    
                     if (acc_name != null){
                         System.out.println("Enter the amount you want to transfer: ");
                         int transfer_amount = sc.nextInt();
+                    // Adding items ------>
                         acc.transfer_money(acc_n,transfer_amount);
                     }
                     break;
