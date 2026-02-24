@@ -88,13 +88,15 @@ class bank{
 // choice -------->
         
         while (true){
-            System.out.println("Banking Menu:\n" +
+            System.out.println();
+            System.out.println(" ====== Banking Menu: ====== \n" +
                     "1. Deposit Money\n" +
                     "2. Withdraw Money\n" +
                     "3. Check Balance\n" +
                     "4. Transaction History !\n" +
                     "5. Transfer Money");
 
+            System.out.println();
             System.out.println("Enter your choice: ");
             Integer choice = sc.nextInt();
 
@@ -129,7 +131,7 @@ class bank{
                     if (acc_name != null){
                         System.out.println("Enter the amount you want to transfer: ");
                         int transfer_amount = sc.nextInt();
-                        
+
                     // Adding items ------>
 
                         acc.transfer_money(acc_n,transfer_amount);
