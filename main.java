@@ -129,7 +129,9 @@ class bank{
                     if (acc_name != null){
                         System.out.println("Enter the amount you want to transfer: ");
                         int transfer_amount = sc.nextInt();
+                        
                     // Adding items ------>
+
                         acc.transfer_money(acc_n,transfer_amount);
                     }
                     break;
