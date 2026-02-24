@@ -148,12 +148,17 @@ class bank{
 }
 
 class account extends bank{
+
+    // attributes ----->
+    
     Integer account_number;
     String user_name;
     Integer PIN;
     String password;
     Integer balance;
 
+// constructor ----->
+    
     account(Integer account_number,String user_name,Integer PIN,String password,Integer balance){
         this.balance = balance;
         this.account_number = account_number;
@@ -162,16 +167,22 @@ class account extends bank{
         this.user_name = user_name;
     }
 
+// method ------>
+
     void display_info(){
         System.out.println("\nName: "+this.user_name+
                 "Balance: "+this.balance+
                 "\nAccount Number: "+this.account_number);
     }
+    
+// method ------>
 
     void deposit(int amm){
         int am = amm;
         this.balance+=am;
     }
+    
+// method (linked with class) ------>
 
     void withdraw(int amm){
         int am = amm;
@@ -181,6 +192,8 @@ class account extends bank{
             System.out.println("Withdraw complete");
         }
     }
+    
+// method (linked with class) ------>
 
     void transfer_money(account acc_reciever,int amount){
         if (amount<=balance){
@@ -192,6 +205,9 @@ class account extends bank{
             System.out.println("Invalid transfer or Insufficient Funds");
         }
     }
+
+// getter ------>
+
     public String getuser_name(){
         return user_name;
     }
