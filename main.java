@@ -369,6 +369,7 @@ class bank{
                             sc.nextLine();
                             System.out.println("Enter account name: ");
                             String acc_name = sc.nextLine();
+                        
                             account acc_n = details.get(acc_name);
                             if (acc_name != null) {
                                 System.out.println("Enter the amount you want to transfer: ");
