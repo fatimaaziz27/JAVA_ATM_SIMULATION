@@ -253,5 +253,5 @@ class account extends bank{
     public Integer getPIN(){
         return PIN;
     }
-//     +===========+  CODE ENDS HERE  +===========+
 }
+//     +===========+  CODE ENDS HERE  +===========+
